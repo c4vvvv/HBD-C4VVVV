@@ -817,3 +817,100 @@ memoryCard.addEventListener("click",()=>{
 
 }
 
+// ================================
+// Save Memory to Google Sheet
+// ================================
+
+const GOOGLE_SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbyZHAGhB4R_oPfgjCQUnbEzw0L06HdVHYxI3-LVfWVgpswm5BKpZ0bgctVniG14B5rv3A/exec";
+
+
+const saveBtn =
+document.getElementById("saveBtn");
+
+const playerName =
+document.getElementById("playerName");
+
+const saveMessage =
+document.getElementById("saveMessage");
+
+
+saveBtn.addEventListener("click", async ()=>{
+
+    const name =
+        playerName.value.trim();
+
+
+    // 沒有輸入名字
+    if(!name){
+
+        saveMessage.innerHTML =
+            "請輸入名字";
+
+        return;
+
+    }
+
+
+    // 防止重複點擊
+    saveBtn.disabled = true;
+
+    saveBtn.innerHTML =
+        "保存中...";
+
+
+    const data = {
+
+        name: name,
+
+        score: game.score
+
+    };
+
+
+    try{
+
+        await fetch(
+            GOOGLE_SCRIPT_URL,
+            {
+
+                method: "POST",
+
+                mode: "no-cors",
+
+                headers: {
+                    "Content-Type":
+                    "text/plain"
+                },
+
+                body:
+                JSON.stringify(data)
+
+            }
+        );
+
+
+        saveMessage.innerHTML =
+            "✓ 記憶已保存";
+
+        saveBtn.innerHTML =
+            "已保存";
+
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        saveMessage.innerHTML =
+            "保存失敗，請稍後再試";
+
+        saveBtn.disabled = false;
+
+        saveBtn.innerHTML =
+            "確認保留";
+
+    }
+
+});
