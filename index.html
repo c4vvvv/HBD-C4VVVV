@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ======================
+背景
+====================== -->
+
+<div class="background"></div>
+
+<!-- ======================
+開頭畫面
+====================== -->
+
+<section id="intro" class="page active">
+
+<div class="window">
+
+<div class="window-title">
+
+【觸發關鍵劇情】
+
+</div>
+
+<div class="window-content">
+
+<div class="character">
+
+你是我的阿比嗎?
+</div>
+
+
+
+<p class="typing delay1">
+
+今天是我生日
+
+</p>
+
+
+<p class="typing delay3">
+
+請輸入今天的通關密語!
+
+</p>
+
+<p class="hint">
+
+提示：四個字
+
+</p>
+
+<input
+
+type="text"
+
+id="password"
+
+autocomplete="off"
+
+placeholder="請輸入..."
+
+>
+
+<button id="passwordBtn">
+
+鎖定答案
+
+</button>
+
+<p id="message"></p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================
+START
+====================== -->
+
+<section id="startPage" class="page">
+
+<div class="chapter">
+
+CHAPTER 01
+
+</div>
+
+
+<h1>
+
+DO YOU UNDERSTAND ME?
+
+</h1>
+
+
+
+<p>
+
+共10題
+
+</p>
+
+<div class="progress">
+
+<div id="progressBar"></div>
+
+</div>
+
+<button id="startBtn">
+
+START
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================
+Quiz
+====================== -->
+
+<section id="quizPage" class="page">
+
+<div class="window">
+
+<div class="window-title">
+
+Question
+
+</div>
+
+<div class="window-content">
+
+<div class="top">
+	<div class="affection">
+
+♘♞♘♞♘♞
+
+</div>
+
+<div>
+
+Question
+
+<span id="questionNumber">
+
+1
+
+</span>
+
+/
+
+10
+
+</div>
+
+<div>
+
+Score：
+
+<span id="score">
+
+0
+
+</span>
+
+</div>
+
+</div>
+
+<h2 id="question">
+
+題目
+
+</h2>
+
+<div id="answers">
+
+</div>
+<div id="feedback">
+
+</div>
+
+<button id="nextBtn">
+
+Next
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================
+Ending
+====================== -->
+<!-- ======================
+Ending Result
+====================== -->
+
+<section id="resultPage" class="page">
+
+
+<div class="window">
+
+
+<div class="window-title">
+
+DO YOU UNDERSTAND ME?
+
+</div>
+
+
+<div class="window-content">
+
+
+
+
+
+<p class="typing">
+
+靈魂同步率為...
+
+</p>
+
+
+
+<div id="finalScore">
+
+0%
+
+</div>
+
+
+
+<div class="sync-container">
+
+<div id="syncBar"></div>
+
+</div>
+
+
+
+<h2 id="rank">
+
+SYNCING...
+
+</h2>
+
+
+
+<p id="description">
+
+正在分析你與我的連結...
+
+</p>
+
+
+
+<div id="typeBox">
+
+
+</div>
+
+
+
+
+
+
+
+<div id="card">
+
+
+</div>
+
+
+
+<button onclick="location.reload()">
+
+重寫記憶
+
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+</section>
+
+<script src="questions.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
